@@ -9,6 +9,7 @@ let items = [
 
 // GET Request - Retrieves all items
 app.get('/items', (req, res) => {
+  console.log('Items on GET:', items);
   res.json(items);
 });
 
