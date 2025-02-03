@@ -16,16 +16,12 @@ app.get('/items', (req, res) => {
 app.post('/items', (req, res) => {
   const newItem = {
     id: items.length + 1,
-    title: req.body.title,
+    name: req.body.name,
     description: req.body.description
   };
   items.push(newItem);
   res.status(201).json(newItem);
 });
-{
-  "title": "My New Item",
-  "details": "This is a test item"
-}
 
 
 // PATCH Request - Updates part of an item
