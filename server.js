@@ -22,6 +22,11 @@ app.post('/items', (req, res) => {
   items.push(newItem);
   res.status(201).json(newItem);
 });
+{
+  "title": "My New Item",
+  "details": "This is a test item"
+}
+
 
 // PATCH Request - Updates part of an item
 app.patch('/items/:id', (req, res) => {
