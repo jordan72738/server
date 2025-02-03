@@ -16,13 +16,12 @@ app.get('/items', (req, res) => {
 app.post('/items', (req, res) => {
   const newItem = {
     id: items.length + 1,
-    name: body.name,
-    description: body.description
+    name: req.body.name,
+    description: req.body.description
   };
   items.push(newItem);
   res.status(201).json(newItem);
 });
-
 
 // PATCH Request - Updates part of an item
 app.patch('/items/:id', (req, res) => {
@@ -49,11 +48,10 @@ app.delete('/items/:id', (req, res) => {
   }
 
   items.splice(index, 1);
-  res.status(204).send(); // 204 means "No Content"
+  res.status(204).send(); // No Content
 });
 
 // Start the server
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });
-
