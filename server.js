@@ -16,7 +16,7 @@ app.get('/items', (req, res) => {
 app.post('/items', (req, res) => {
   const newItem = {
     id: items.length + 1,
-    name: req.body.title,
+    title: req.body.title,
     description: req.body.description
   };
   items.push(newItem);
